@@ -138,7 +138,7 @@ if(@$_POST['number'] != '' && @$_POST['pswd'] != '') {
           for($i = 1; $i <= NUMBER_OF_PEOPLE; $i++)
             if(!in_array($i, $numbersTaken) && $i != $numberUser)
               $numbersAvailable[] = $i;
-        $numberTaken = $numbersAvailable[rand(0, count($numbersAvailable) - 1)];
+        $numberTaken = $numbersAvailable[random_int(0, count($numbersAvailable) - 1)];
         $hashes = array();
         $hashes[] = password_hash($numberUser, PASSWORD_DEFAULT);
         $hashes[] = password_hash($_POST['pswd'], PASSWORD_DEFAULT);
