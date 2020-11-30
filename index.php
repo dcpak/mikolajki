@@ -88,7 +88,7 @@
 </head>
 <body>
 <?php
-const NUMBER_OF_PEOPLE = 3;
+const NUMBER_OF_PEOPLE = 4;
 const FILE_NUMBERS = 'numbers_taken.txt';
 const ALERT_ERROR_WRITE = '<div class="error">Nie udało się zapisać wylosowanego numerka.<br />Spróbuj jeszcze raz, albo rocketczatuj do administratora.</div>';
 const ALERT_ERROR_NO_PARAMS = '<div class="error">O jerum pajtasz, czegoś tu zabrakowało.</div>';
@@ -165,7 +165,7 @@ if(@$_POST['number'] != '' && @$_POST['pswd'] != '') {
   } else {
     echo ALERT_ERROR_NUMBER_RANGE;
   }
-} else {
+} else if(isset($_POST['number']) || isset($_POST['pswd'])) {
   echo ALERT_ERROR_NO_PARAMS;
 }
 if($showForm) {
